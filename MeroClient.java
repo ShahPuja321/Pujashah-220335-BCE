@@ -4,10 +4,11 @@ import java.io.IOException;
 
 public class MeroClient {
     public static void main(String[] args) {
+        try{
         System.out.println("Waiting for server");
          Socket socket = new Socket("localhost",9999);
          System.out.println("Connected with server");
-         DataOutputStrem dos = new DataOutputStrem (socket.getOutputStream());
+         DataOutputStream dos = new DataOutputStream (socket.getOutputStream());
          dos.write(10);
          dos.flush();
          dos.close();
